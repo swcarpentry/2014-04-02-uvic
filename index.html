@@ -1,0 +1,105 @@
+---
+layout: bootcamp
+root: .
+venue: University of Victoria
+address: Victoria, B.C.
+country: Canada
+humandate: Apr 2-3, 2014
+humantime: 9:00 am - 4:30 pm
+startdate: 2014-04-02
+enddate: 2014-04-03
+latlng: 53.525298,-113.530277
+registration: open
+instructor: ["Ethan White", "Greg Wilson"]
+contact: admin@software-carpentry.org
+eventbrite: 10138651981
+---
+{% if page.eventbrite %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" width="100%" scrolling="auto"></iframe>
+{% endif %}
+
+<h2>General Information</h2>
+
+<p>
+  <a href="http://software-carpentry.org">Software Carpentry</a>'s mission
+  is to help scientists and engineers become more productive
+  by teaching them basic lab skills for computing
+  like program design, version control, data management, and task automation.
+  This two-day hands-on bootcamp will cover basic concepts and tools;
+  participants will be encouraged to help one another
+  and to apply what they have learned to their own research problems.
+</p>
+
+{% if page.instructor %}
+<p>
+  <strong>Instructors:</strong>
+  {{page.instructor | join: ', ' %}}
+</p>
+{% endif %}
+
+<p>
+  <strong>Who:</strong>
+  The course is aimed at graduate students and other researchers.
+</p>
+
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{ page.address }}.
+  Get directions with
+  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
+  or
+  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
+</p>
+{% endif %}
+
+<p>
+  <strong>Requirements:</strong>
+  Participants must bring a laptop with a few specific software packages installed
+  (listed below).
+</p>
+
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+
+<hr/>
+
+<h2>Schedule</h2>
+
+<table class="table table-striped">
+  <tr> <td>Monday</td>  <td>09:00</td>  <td>Introduction to task automation with the Unix shell</td> </tr>
+  <tr> <td></td>        <td></td>       <td>Coffee will be served at 10:30.</td> </tr>
+  <tr> <td></td>        <td>12:00</td>  <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>13:00</td>  <td>Building programs with Python</td> </tr>
+  <tr> <td></td>        <td></td>       <td>Coffee will be served at 14:30.</td> </tr>
+  <tr> <td></td>        <td>16:00</td>  <td>Wrap-up</td> </tr>
+  <tr> <td>Tuesday</td> <td>09:00</td>  <td>Version control with Git</td> </tr>
+  <tr> <td></td>        <td></td>       <td>Coffee will be served at 10:30.</td> </tr>
+  <tr> <td></td>        <td>12:00</td>  <td>Lunch break</td> </tr>
+  <tr> <td></td>        <td>13:00</td>  <td>Managing data with SQL</td> </tr>
+  <tr> <td></td>        <td></td>       <td>Coffee will be served at 14:30.</td> </tr>
+  <tr> <td></td>        <td>15:00</td>  <td>Putting it all together</td> </tr>
+  <tr> <td></td>        <td>16:00</td>  <td>Wrap-up</td> </tr>
+</table>
+
+<hr/>
+
+<h2>Setup</h2>
+
+<p>
+  To participate in a Software Carpentry bootcamp, 
+  you will need working copies of the software described below.
+  Please make sure to install everything
+  (or at least to download the installers)
+  <em>before</em> the start of your bootcamp.
+</p>
+
+{% include setup.html %}
